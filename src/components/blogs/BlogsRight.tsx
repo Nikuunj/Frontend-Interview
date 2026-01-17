@@ -29,7 +29,7 @@ function BlogsRight({ blogId }: { blogId: number }) {
   }
 
   return (
-    <div>
+    <div >
       <BlogsDetailsBox
         id={data.id}
         title={data.title}

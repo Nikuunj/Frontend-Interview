@@ -12,7 +12,7 @@ export interface BlogDataType {
   content: string;
 }
 
-function BlogsLeft({ updateId }: { updateId: (val: number) => void }) {
+function BlogsLeft({ updateId, blogId }: { updateId: (val: number) => void, blogId: number }) {
   const { isLoading, isError, data } = useQuery({
     queryKey: ['fetchData'],
     queryFn: async (): Promise<BlogDataType[]> => {
@@ -40,13 +40,20 @@ function BlogsLeft({ updateId }: { updateId: (val: number) => void }) {
     key={idx}
     id={Number(val.id)}
     title={val.title}
+    date={val.date}
     description={val.description}
     category={val.category}
     updateId={updateId}
+    blogId={blogId}
   />)
   return (
     <div>
-      {renderBlog}
+      <p className="font-bold text-2xl   pb-6">
+        Articles
+      </p>
+      <div className="flex md:flex-col w-screen  pe-7   overflow-x-auto md:overflow-y-auto md:max-w-sm md:space-y-6 md:space-x-0 space-x-6 scrollbar-hide">
+        {renderBlog}
+      </div>
     </div>
   )
 }

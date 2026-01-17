@@ -2,7 +2,7 @@ import { GraduationCap, SquarePen } from "lucide-react";
 
 function Navbar() {
   return (
-    <div className="flex justify-between px-5 py-3 border-b border-zinc-200">
+    <div className="flex justify-between px-5 py-3 border-b border-zinc-200 bg-white sticky  top-0 w-full z-10">
       <span className="flex gap-2 items-center font-bold text-lg">
         <span className="px-1 py-1 bg-blue-600/90 rounded-md ">
           <GraduationCap className="fill-white text-white size-5" />

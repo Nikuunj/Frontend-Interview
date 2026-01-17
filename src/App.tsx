@@ -3,9 +3,9 @@ import Navbar from "./components/Navbar"
 
 function App() {
   return (
-    <div >
+    <div className="bg-gray-100/90" >
       <Navbar />
-      <div className="py-7 flex flex-col items-center gap-1 sm:gap-4 px-4">
+      <div className="py-7 flex flex-col items-center gap-1 sm:gap-4 px-4 bg-white">
         <h1 className="font-extrabold text-2xl sm:text-[40px]">
           CA Monk Blog
         </h1>
