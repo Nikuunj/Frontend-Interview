@@ -8,27 +8,36 @@ function BlogsRight({ blogId }: { blogId: number }) {
     queryKey: ['fetchBlogDetails', blogId],
     queryFn: async (): Promise<BlogDataType> => {
       const req = await axios.get(`http://localhost:3001/blogs/${blogId}`);
-      if (req.data) {
-        return req.data;
-      }
-      throw Error('Not found')
+      return req.data;
     }
   })
 
   if (isLoading) {
-    <div>
-      Loading...
-    </div>
+    return (
+      <div>
+        Loading...
+      </div>
+    )
   }
-  if (isError) {
-    <div>
-      is error
-    </div>
+
+  if (isError || !data) {
+    return (
+      <div>
+        is error
+      </div>
+    )
   }
+
   return (
     <div>
       <BlogsDetailsBox
         id={data.id}
+        title={data.title}
+        category={data.category}
+        description={data.description}
+        content={data.content}
+        date={data.date}
+        coverImage={data.coverImage}
       />
     </div>
   )

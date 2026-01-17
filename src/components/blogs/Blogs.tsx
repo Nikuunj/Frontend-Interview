@@ -5,7 +5,7 @@ import BlogsRight from "./BlogsRight"
 function Blogs() {
   const [blogId, setBlogId] = useState<number>(1);
   return (
-    <div>
+    <div className="flex gap-1.5">
       <BlogsLeft updateId={(number) => { setBlogId(number) }} />
       <BlogsRight blogId={blogId} />
     </div>
